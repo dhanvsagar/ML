@@ -33,7 +33,6 @@ train_x['Sex'] = train_x['Sex'].apply(lambda x:d[x])
 
 train_feature, test_feature, train_label, test_label = tts(train_x,train_Y, test_size=0.2, random_state=42)
 
-# model = svm.LinearSVC()
 model = RandomForestClassifier()
 
 model.fit(train_feature, train_label)
@@ -73,9 +72,9 @@ print(type(PassengerId))
 output = pd.DataFrame(data = PassengerId)
 output['PassengerId'] = PassengerId
 output['Survived']    = prediction_actual
-#
+
 print(len(prediction_actual))
 print(len(PassengerId))
 
-output.to_csv("predictions.csv")
+output.to_csv("predictions.csv", index=False)
 #np.savetxt("predictions.csv", prediction_actual, delimiter=',')
