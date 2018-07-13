@@ -14,12 +14,8 @@ api = tweepy.API(auth)
 
 all_tweets = api.search('Kerala')
 
-f = open('sentiment.csv','w')
 
 for tweet in all_tweets:
     print(tweet.text)
     analysis = TextBlob(tweet.text)
     print(analysis.sentiment)
-    line = tweet.text+", "+str(analysis.sentiment)
-
-f.close()
