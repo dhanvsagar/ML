@@ -12,7 +12,7 @@ auth.set_access_token(access_tocken, access_secret)
 
 api = tweepy.API(auth)
 
-all_tweets = api.search('Modi')
+all_tweets = api.search('Kerala')
 
 f = open('sentiment.csv','w')
 
